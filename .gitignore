@@ -237,3 +237,4 @@ $RECYCLE.BIN/
 *.kv
 *.vec
 *.npy
+korean_frequency.json
