@@ -27,7 +27,7 @@ def fetch_sentences_selenium(word, max_pages=1):
     for page in range(1, max_pages + 1):
         start = (page - 1) * 10 + 1
         url = f"https://search.naver.com/search.naver?where=news&query={word}&start={start}"
-        print(f"🔍 [{word}] 페이지 {page} 크롤링 중...")
+        print(f"[{word}] 페이지 {page} 크롤링 중...")
 
         try:
             driver.get(url)
@@ -45,10 +45,10 @@ def fetch_sentences_selenium(word, max_pages=1):
                     results.append(text)
 
         except Exception as e:
-            print(f"⚠️ [{word}] 페이지 {page} 오류: {e}")
+            print(f"[{word}] 페이지 {page} 오류: {e}")
 
     driver.quit()
-    print(f"✅ [{word}] 수집 완료 (총 {len(results)}문장)")
+    print(f"[{word}] 수집 완료 (총 {len(results)}문장)")
     return results
 
 
@@ -86,4 +86,4 @@ model = Word2Vec(
     workers=4
 )
 model.wv.save("wiktionary5800_custom.kv")
-print("✅ Word2Vec 저장 완료")
+print("Word2Vec 저장 완료")
