@@ -65,7 +65,7 @@ def preprocess_sentences(sentences):
 
 
 all_sentences = []
-for word in target_words[:100]:  # 테스트용: 상위 100개 단어만
+for word in target_words[:-1]:  # 테스트용: 상위 100개 단어만
     try:
         sents = fetch_sentences_selenium(word, max_pages=2)
         all_sentences.extend(sents)
