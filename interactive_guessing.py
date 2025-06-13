@@ -70,8 +70,8 @@ def start_interactive_guessing():
     candidates = [w for w in word_list if w in model]
     tried = []
 
-    print("🎯 꼬맨틀 정답 예측 도우미 시작!")
-    print("유사도는 정수 또는 소수점(예: 74.3)으로 입력하세요.")
+    print("꼬맨틀 정답 예측 도우미")
+    print("유사도는 정수 또는 소수점(예: 12.3)으로 입력하세요.")
     print("정답을 맞혔다면 '정답'이라고 입력해 주세요.\n")
 
     for step in range(1, 21):
@@ -81,7 +81,7 @@ def start_interactive_guessing():
         user_input = input("→ 정답과의 유사도 점수는? (또는 '정답') : ").strip()
 
         if user_input.lower() in ['정답', '맞춤', '끝']:
-            print(f"\n🎉 정답: '{guess}' (총 {step}회 시도)")
+            print(f"\n정답: '{guess}' (총 {step}회 시도)")
             return tried + [guess]
 
         try:
@@ -95,10 +95,10 @@ def start_interactive_guessing():
         print(f"남은 후보 수: {len(candidates)}개\n")
 
         if len(candidates) == 0:
-            print("❌ 후보가 없습니다. 유사도 입력을 확인해 주세요.")
+            print("후보가 없습니다. 유사도 입력을 확인해 주세요.")
             break
 
-    print("🔚 20회 이상 시도됨. 정답 유추 실패.")
+    print("20회 이상 시도됨. 정답 유추 실패.")
     return tried
 
 
