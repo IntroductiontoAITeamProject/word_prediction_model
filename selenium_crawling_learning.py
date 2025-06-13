@@ -16,7 +16,7 @@ target_words = sorted({w for group in data.values() for w in group})
 
 def fetch_sentences_selenium(word, max_pages=1):
     options = webdriver.ChromeOptions()
-    options.add_argument("--headless")  # 창 띄우지 않음
+    # options.add_argument("--headless")  # 창 띄우지 않음
     options.add_argument("--no-sandbox")
     options.add_argument("--disable-dev-shm-usage")
 
